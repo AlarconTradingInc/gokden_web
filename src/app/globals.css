@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  /* ─── Premium Black & White Palette ─────────────────── */
+  --color-white:      #FFFFFF;
+  --color-pearl:      #FAFAF9;
+  --color-ivory:      #F5F5F3;
+  --color-silk:       #EDEDEB;
+  --color-stone:      #D8D8D6;
+  --color-silver:     #B8B8B6;
+  --color-gray:       #888886;
+  --color-muted:      #6A6A68;
+  --color-charcoal:   #1A1A18;
+  --color-charcoal-soft: #2C2C2A;
+  --color-black:      #0A0A08;
+
+  /* ─── Semantic accent (warm silver — replaces gold) ─── */
+  --color-gold:       #A8A8A6;
+  --color-gold-light: #D4D4D2;
+  --color-gold-dark:  #6A6A68;
+
+  /* ─── Legacy aliases kept for component compatibility ── */
+  --color-champagne:  #EFEFED;
+
+  /* ─── Typography ─────────────────────────────────────── */
+  --font-serif: var(--font-playfair);
+  --font-sans:  var(--font-inter);
+}
+
+/* ─── Base reset ─────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-pearl);
+  color: var(--color-charcoal);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Custom scrollbar ───────────────────────────────── */
+::-webkit-scrollbar        { width: 4px; }
+::-webkit-scrollbar-track  { background: var(--color-ivory); }
+::-webkit-scrollbar-thumb  { background: var(--color-charcoal); border-radius: 2px; }
+
+/* ─── Selection ──────────────────────────────────────── */
+::selection {
+  background-color: var(--color-charcoal);
+  color: var(--color-pearl);
+}
+
+/* ─── Grayscale photo utility ────────────────────────── */
+.photo-mono {
+  filter: grayscale(100%) contrast(1.05);
+  transition: filter 0.6s ease;
+}
+.photo-mono:hover {
+  filter: grayscale(0%) contrast(1);
+}
